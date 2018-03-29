@@ -12,7 +12,7 @@ export default class Clock extends React.PureComponent {
       this.tick();
     }, 5000);
     const res = dummyApi().then(res => {
-      if(true) {
+      if(!this.ignoreLastApiRequest) {
         this.setState({
           externalData: res 
         });
